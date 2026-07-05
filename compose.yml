@@ -1,0 +1,15 @@
+services:
+  home-server-demo:
+    build: .
+    container_name: home-server-demo
+    restart: unless-stopped
+
+    ports:
+      - "8080:80"
+
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
